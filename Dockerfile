@@ -1,4 +1,9 @@
 FROM ruby:2.6.3-slim
+
+RUN addgroup --system <group>
+RUN adduser --system <user> --ingroup <group>
+USER <user>:<group>
+
 LABEL maintainer Travis CI GmbH <support+docs-docker-images@travis-ci.com>
 
 # packages required for bundle install
